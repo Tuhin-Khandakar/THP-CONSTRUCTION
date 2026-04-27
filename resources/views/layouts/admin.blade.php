@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | THP Construction</title>
-    @if(isset($settings['site_favicon']))
+    @if(!empty($settings['site_favicon']))
     <link rel="icon" type="image/png" href="{{ asset('storage/' . $settings['site_favicon']) }}">
+    @else
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
     @endif
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>

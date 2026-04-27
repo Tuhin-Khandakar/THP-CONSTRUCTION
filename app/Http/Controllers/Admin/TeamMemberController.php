@@ -28,6 +28,7 @@ class TeamMemberController extends Controller
             'details' => 'nullable|string',
             'photo' => 'nullable|image|max:2048',
             'order' => 'nullable|integer',
+            'type' => 'required|in:team,trustee',
         ]);
 
         $validated['order'] = $validated['order'] ?? 0;
@@ -54,6 +55,7 @@ class TeamMemberController extends Controller
             'details' => 'nullable|string',
             'photo' => 'nullable|image|max:2048',
             'order' => 'nullable|integer',
+            'type' => 'required|in:team,trustee',
         ]);
 
         if ($request->has('remove_image') && $request->remove_image == '1') {

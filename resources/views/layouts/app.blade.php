@@ -6,8 +6,10 @@
     <title>@yield('meta_title', 'THP Construction | Modern Luxury Within Reach')</title>
     <meta name="description" content="@yield('meta_description', 'THP Construction provides premium European-style modern construction in Bangladesh. 100-year structural warranty, eco-friendly concrete hollow blocks.')">
     
-    @if(isset($settings['site_favicon']))
+    @if(!empty($settings['site_favicon']))
     <link rel="icon" type="image/png" href="{{ asset('storage/' . $settings['site_favicon']) }}">
+    @else
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
     @endif
     
     <!-- Fonts -->

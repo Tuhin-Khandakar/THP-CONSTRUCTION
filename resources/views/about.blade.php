@@ -37,6 +37,62 @@
         </div>
     </section>
 
+    <!-- Trustee Board Section -->
+    @if($trustees->count() > 0)
+        <section class="py-32 bg-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Trustee Board</span>
+                    <h2 class="text-4xl md:text-6xl font-heading font-black text-primary mb-8">
+                        {{ $settings['trustee_title'] ?? 'Our Honored Trustees' }}</h2>
+                    <p class="text-darkText/60">
+                        {{ $settings['trustee_description'] ?? 'The guiding force behind our vision and values.' }}
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    @foreach($trustees as $member)
+                        <div class="bg-white p-8 lux-shadow text-center group">
+                            <div
+                                class="mb-6 relative mx-auto w-40 h-40 overflow-hidden rounded-full border-4 border-transparent group-hover:border-accent transition-colors duration-500">
+                                @if($member->photo)
+                                    <img src="{{ asset('storage/' . $member->photo) }}" alt="{{ $member->name }}"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                @else
+                                    <div class="w-full h-full bg-primary/10 flex items-center justify-center">
+                                        <svg class="h-16 w-16 text-primary/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        </svg>
+                                    </div>
+                                @endif
+                            </div>
+                            <h3 class="text-xl font-heading font-bold text-primary mb-2">{{ $member->name }}</h3>
+                            <div class="text-xs font-bold text-accent uppercase tracking-widest mb-4">{{ $member->designation }}
+                            </div>
+                            @if($member->details)
+                                <div x-data="{ expanded: false }">
+                                    <p class="text-darkText/60 text-sm leading-relaxed" x-show="!expanded">
+                                        {{ Str::limit($member->details, 120) }}
+                                    </p>
+                                    <p class="text-darkText/60 text-sm leading-relaxed" x-show="expanded" style="display: none;">
+                                        {{ $member->details }}
+                                    </p>
+                                    @if(strlen($member->details) > 120)
+                                        <button @click="expanded = !expanded" class="text-accent text-[10px] font-bold uppercase tracking-widest mt-2 hover:underline focus:outline-none">
+                                            <span x-show="!expanded">Read More</span>
+                                            <span x-show="expanded">Read Less</span>
+                                        </button>
+                                    @endif
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
     <!-- Founder Profile -->
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

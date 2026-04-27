@@ -19,6 +19,11 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>{{ url('/gallery') }}</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     
     @foreach(\App\Models\Project::all() as $project)
     <url>

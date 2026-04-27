@@ -20,6 +20,7 @@
                 <tr>
                     <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-500">Photo</th>
                     <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-500">Name</th>
+                    <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-500">Type</th>
                     <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-500">Designation</th>
                     <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-500">Order</th>
                     <th class="px-6 py-4 text-xs font-bold uppercase tracking-widest text-gray-500 text-right">Actions</th>
@@ -38,6 +39,7 @@
                         @endif
                     </td>
                     <td class="px-6 py-4 font-bold text-gray-800">{{ $member->name }}</td>
+                    <td class="px-6 py-4 text-sm"><span class="px-2 py-1 rounded-full border {{ $member->type == 'trustee' ? 'bg-yellow-50 text-yellow-700 border-yellow-200' : 'bg-gray-50 text-gray-600 border-gray-200' }}">{{ ucfirst($member->type) }}</span></td>
                     <td class="px-6 py-4 text-gray-600">{{ $member->designation }}</td>
                     <td class="px-6 py-4 text-gray-600">{{ $member->order }}</td>
                     <td class="px-6 py-4 text-right space-x-2">
@@ -51,7 +53,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="5" class="px-6 py-8 text-center text-gray-500">No team members found.</td>
+                    <td colspan="6" class="px-6 py-8 text-center text-gray-500">No team members found.</td>
                 </tr>
                 @endforelse
             </tbody>

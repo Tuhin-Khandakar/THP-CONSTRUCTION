@@ -19,19 +19,28 @@
             </div>
         </div>
 
-        <div>
-            <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Photo</label>
-            @if($team->photo)
-                <div class="relative group mb-4 w-fit">
-                    <img src="{{ asset('storage/' . $team->photo) }}" class="h-32 w-32 object-cover rounded-full border">
-                    <label class="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full cursor-pointer shadow-lg hover:bg-red-600 transition-colors" title="Remove photo">
-                        <input type="checkbox" name="remove_image" value="1" class="hidden peer">
-                        <svg class="h-4 w-4 peer-checked:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                        <svg class="h-4 w-4 hidden peer-checked:block text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
-                    </label>
-                </div>
-            @endif
-            <input type="file" name="photo" accept="image/*" class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+                <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Member Type</label>
+                <select name="type" required class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent bg-white">
+                    <option value="team" {{ $team->type == 'team' ? 'selected' : '' }}>Team Member</option>
+                    <option value="trustee" {{ $team->type == 'trustee' ? 'selected' : '' }}>Trustee Board</option>
+                </select>
+            </div>
+            <div>
+                <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Photo</label>
+                @if($team->photo)
+                    <div class="relative group mb-4 w-fit">
+                        <img src="{{ asset('storage/' . $team->photo) }}" class="h-32 w-32 object-cover rounded-full border">
+                        <label class="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full cursor-pointer shadow-lg hover:bg-red-600 transition-colors" title="Remove photo">
+                            <input type="checkbox" name="remove_image" value="1" class="hidden peer">
+                            <svg class="h-4 w-4 peer-checked:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                            <svg class="h-4 w-4 hidden peer-checked:block text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                        </label>
+                    </div>
+                @endif
+                <input type="file" name="photo" accept="image/*" class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">
+            </div>
         </div>
         
         <div>

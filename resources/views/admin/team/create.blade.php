@@ -18,9 +18,18 @@
             </div>
         </div>
 
-        <div>
-            <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Photo</label>
-            <input type="file" name="photo" accept="image/*" class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+                <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Member Type</label>
+                <select name="type" required class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent bg-white">
+                    <option value="team">Team Member</option>
+                    <option value="trustee">Trustee Board</option>
+                </select>
+            </div>
+            <div>
+                <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Photo</label>
+                <input type="file" name="photo" accept="image/*" class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">
+            </div>
         </div>
         
         <div>

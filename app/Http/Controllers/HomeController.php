@@ -23,9 +23,10 @@ class HomeController extends Controller
 
     public function about()
     {
-        $team = \App\Models\TeamMember::orderBy('order')->get();
+        $team = \App\Models\TeamMember::where('type', 'team')->orderBy('order')->get();
+        $trustees = \App\Models\TeamMember::where('type', 'trustee')->orderBy('order')->get();
         $settings = \App\Models\Setting::all()->pluck('value', 'key');
-        return view('about', compact('team', 'settings'));
+        return view('about', compact('team', 'trustees', 'settings'));
     }
 
     public function sitemap()
