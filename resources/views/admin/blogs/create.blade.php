@@ -9,7 +9,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="md:col-span-2">
                 <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Post Title</label>
-                <input type="text" name="title" required class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">
+                <input type="text" name="title" value="{{ old('title') }}" required class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">
             </div>
             
             <div>
@@ -19,18 +19,18 @@
 
             <div>
                 <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Publish Date</label>
-                <input type="date" name="published_at" class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">
+                <input type="date" name="published_at" value="{{ old('published_at') }}" class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">
             </div>
         </div>
 
         <div>
             <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Excerpt (Short Summary)</label>
-            <textarea name="excerpt" rows="3" class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent"></textarea>
+            <textarea name="excerpt" rows="3" class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent">{{ old('excerpt') }}</textarea>
         </div>
 
         <div>
             <label class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">Content (HTML allowed)</label>
-            <textarea name="content" rows="12" required class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent font-mono"></textarea>
+            <textarea name="content" rows="12" required class="w-full border px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-accent font-mono">{{ old('content') }}</textarea>
         </div>
 
         <div class="bg-gray-50 p-8 rounded-lg border">
@@ -38,11 +38,11 @@
             <div class="space-y-6">
                 <div>
                     <label class="text-[10px] font-bold text-gray-400 uppercase">Meta Title</label>
-                    <input type="text" name="meta_title" class="w-full border px-4 py-2 mt-1 rounded outline-none focus:ring-1 focus:ring-accent">
+                    <input type="text" name="meta_title" value="{{ old('meta_title') }}" class="w-full border px-4 py-2 mt-1 rounded outline-none focus:ring-1 focus:ring-accent">
                 </div>
                 <div>
                     <label class="text-[10px] font-bold text-gray-400 uppercase">Meta Description</label>
-                    <textarea name="meta_description" rows="2" class="w-full border px-4 py-2 mt-1 rounded outline-none focus:ring-1 focus:ring-accent"></textarea>
+                    <textarea name="meta_description" rows="2" class="w-full border px-4 py-2 mt-1 rounded outline-none focus:ring-1 focus:ring-accent">{{ old('meta_description') }}</textarea>
                 </div>
             </div>
         </div>

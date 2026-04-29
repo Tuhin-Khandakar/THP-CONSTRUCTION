@@ -29,7 +29,7 @@ class BlogController extends Controller
             'excerpt' => 'nullable|string',
             'meta_title' => 'nullable|string',
             'meta_description' => 'nullable|string',
-            'featured_image' => 'nullable|image|max:2048',
+            'featured_image' => 'nullable|image|max:5120',
             'published_at' => 'nullable|date',
         ]);
 
@@ -57,7 +57,7 @@ class BlogController extends Controller
             'excerpt' => 'nullable|string',
             'meta_title' => 'nullable|string',
             'meta_description' => 'nullable|string',
-            'featured_image' => 'nullable|image|max:2048',
+            'featured_image' => 'nullable|image|max:5120',
             'published_at' => 'nullable|date',
         ]);
 
