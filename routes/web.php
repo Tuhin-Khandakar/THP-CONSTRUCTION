@@ -26,6 +26,8 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/gallery', [\App\Http\Controllers\GalleryController::class, 'index'])->name('gallery.index');
+Route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('privacy');
+Route::get('/terms-of-service', [HomeController::class, 'terms'])->name('terms');
 
 // Sitemap & Robots
 Route::get('/sitemap.xml', [HomeController::class, 'sitemap']);
@@ -78,6 +80,9 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     Route::get('/settings', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('settings.index');
     Route::patch('/settings', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('settings.update');
+
+    Route::get('/popup', [App\Http\Controllers\Admin\PopupController::class, 'index'])->name('popup.index');
+    Route::patch('/popup', [App\Http\Controllers\Admin\PopupController::class, 'update'])->name('popup.update');
 
     // Profile routes (standard Breeze)
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

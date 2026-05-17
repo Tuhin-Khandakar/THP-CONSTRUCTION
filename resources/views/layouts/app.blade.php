@@ -177,46 +177,79 @@
                     <div class="space-y-6 text-white/70 text-sm">
                         <div class="flex items-start">
                             <svg class="h-5 w-5 text-accent mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                            <span>{{ $settings['contact_address'] ?? '48/1 Satirpara, Narsingdi Sadar, Dhaka' }}</span>
+                            <span>{{ $settings['contact_address'] ?? '48/1 Satirpara, Narsingdi Sadar, Dhaka, Bangladesh.' }}</span>
                         </div>
                         <div class="flex items-start">
                             <svg class="h-5 w-5 text-accent mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                            <span>{{ $settings['contact_whatsapp'] ?? '+8801625412437' }}</span>
+                            <a href="tel:{{ str_replace([' ', '+'], '', $settings['contact_whatsapp'] ?? '8801352221279') }}" class="hover:text-accent transition-colors">{{ $settings['contact_whatsapp'] ?? '+8801352221279' }}</a>
                         </div>
                         <div class="flex items-start">
                             <svg class="h-5 w-5 text-accent mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                            <span>{{ $settings['contact_email'] ?? 'haqtasnim21@gmail.com' }}</span>
+                            <a href="mailto:{{ $settings['contact_email'] ?? 'support@thpconstructions.com' }}" class="break-all hover:text-accent transition-colors">{{ $settings['contact_email'] ?? 'support@thpconstructions.com' }}</a>
                         </div>
                     </div>
 
-                    <div class="mt-8 pt-8 border-t border-white/5">
-                        <p class="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-3">Website Crafted By</p>
-                        <a href="https://tuhinkhandakar.com/" target="_blank" class="text-accent font-bold hover:underline block text-sm mb-1 tracking-wider">MD TUHIN KHANDAKAR</a>
-                        <p class="text-[10px] text-gray-400 uppercase italic">Founder & CEO</p>
-                        <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-                            <a href="https://markiety.netlify.app/" target="_blank" class="text-[10px] text-gray-500 hover:text-accent transition-colors font-semibold border-b border-gray-800 pb-0.5 uppercase tracking-wider">Markiety</a>
-                            <a href="https://markietyitinstitute.netlify.app/" target="_blank" class="text-[10px] text-gray-500 hover:text-accent transition-colors font-semibold border-b border-gray-800 pb-0.5 uppercase tracking-wider">Markiety IT Institute</a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
             <div class="border-t border-white/10 mt-20 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
                 <p>&copy; {{ date('Y') }} {{ $settings['footer_copyright'] ?? 'THP Construction. All rights reserved. Designed for Excellence.' }}</p>
                 <div class="mt-4 md:mt-0 flex space-x-6">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="{{ route('privacy') }}" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="{{ route('terms') }}" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/{{ str_replace([' ', '+'], '', $settings['contact_whatsapp'] ?? '8801625412437') }}" target="_blank" 
+    <a href="https://wa.me/{{ str_replace([' ', '+'], '', $settings['contact_whatsapp'] ?? '8801352221279') }}" target="_blank" 
        class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group">
         <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.48 5.228 3.48 8.404c0 6.556-5.332 11.888-11.888 11.888-2.015 0-3.991-.512-5.742-1.488l-6.241 1.613zm6.34-3.554c1.516.899 3.13 1.371 4.781 1.371 5.105 0 9.259-4.154 9.259-9.259 0-2.473-.962-4.798-2.709-6.545s-4.073-2.709-6.545-2.709c-5.105 0-9.26 4.153-9.26 9.259 0 1.761.503 3.479 1.454 4.974l-.953 3.478 3.573-.924zm11.397-5.071c-.265-.133-1.564-.772-1.806-.859-.241-.087-.417-.133-.591.133s-.673.859-.824 1.033-.306.191-.57.058c-.265-.133-1.118-.412-2.13-1.313-.788-.702-1.32-1.569-1.474-1.833-.153-.265-.016-.407.117-.539.12-.12.265-.306.398-.459.133-.153.177-.265.265-.441.087-.176.044-.331-.022-.463s-.591-1.424-.81-1.954c-.213-.517-.43-.447-.591-.455-.152-.008-.327-.009-.501-.009s-.459.066-.697.327c-.237.261-.904.883-.904 2.152s.924 2.496 1.053 2.67c.129.174 1.819 2.778 4.406 3.896.615.266 1.096.425 1.47.545.617.198 1.18.17 1.623.104.494-.074 1.564-.639 1.784-1.257s.22-.119.155-.228c-.066-.113-.241-.183-.506-.316z"/></svg>
         <span class="absolute right-full mr-4 bg-white text-primary px-4 py-2 rounded shadow-lg text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp Pranto</span>
     </a>
+
+    @if(($settings['popup_enabled'] ?? '0') == '1' && !empty($settings['popup_image']))
+    <!-- Popup Banner -->
+    <div x-data="{ 
+            showPopup: false,
+            init() {
+                this.showPopup = true;
+                // Auto-close after 10 seconds as requested
+                setTimeout(() => {
+                    this.showPopup = false;
+                }, 10000);
+            }
+         }" 
+         x-show="showPopup"
+         x-cloak
+         x-transition:enter="transition ease-out duration-500"
+         x-transition:enter-start="opacity-0 scale-90"
+         x-transition:enter-end="opacity-100 scale-100"
+         x-transition:leave="transition ease-in duration-300"
+         x-transition:leave-start="opacity-100 scale-100"
+         x-transition:leave-end="opacity-0 scale-90"
+         class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm">
+        
+        <div class="relative max-w-2xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl lux-shadow transform transition-all border-4 border-accent/20">
+            <!-- Close Button -->
+            <button @click="showPopup = false" class="absolute top-4 right-4 z-10 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-lg transition-all hover:rotate-90">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+
+            <!-- Content -->
+            <a href="{{ $settings['popup_link'] ?? '#' }}" class="block group">
+                <div class="relative overflow-hidden">
+                    <img src="{{ asset('storage/' . $settings['popup_image']) }}" alt="Offer" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-8">
+                        <span class="bg-accent text-white px-8 py-3 rounded-full font-bold tracking-widest uppercase text-sm shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform">Learn More</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    @endif
 
     @yield('scripts')
 </body>

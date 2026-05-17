@@ -22,24 +22,24 @@
                 <div class="bg-white p-12 lux-shadow">
                     <h3 class="text-2xl font-heading font-bold text-primary mb-8">Chat With Us</h3>
                     <div class="space-y-6">
-                        <a href="https://wa.me/{{ str_replace([' ', '+'], '', $settings['contact_whatsapp'] ?? '8801625412437') }}" class="flex items-center group p-4 border border-light hover:border-accent transition-colors">
+                        <a href="https://wa.me/{{ str_replace([' ', '+'], '', $settings['contact_whatsapp'] ?? '8801352221279') }}" class="flex items-center group p-4 border border-light hover:border-accent transition-colors">
                             <div class="w-12 h-12 bg-[#25D366]/10 text-[#25D366] flex items-center justify-center rounded-full mr-4">
                                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.48 5.228 3.48 8.404c0 6.556-5.332 11.888-11.888 11.888-2.015 0-3.991-.512-5.742-1.488l-6.241 1.613zm6.34-3.554c1.516.899 3.13 1.371 4.781 1.371 5.105 0 9.259-4.154 9.259-9.259 0-2.473-.962-4.798-2.709-6.545s-4.073-2.709-6.545-2.709c-5.105 0-9.26 4.153-9.26 9.259 0 1.761.503 3.479 1.454 4.974l-.953 3.478 3.573-.924zm11.397-5.071c-.265-.133-1.564-.772-1.806-.859-.241-.087-.417-.133-.591.133s-.673.859-.824 1.033-.306.191-.57.058c-.265-.133-1.118-.412-2.13-1.313-.788-.702-1.32-1.569-1.474-1.833-.153-.265-.016-.407.117-.539.12-.12.265-.306.398-.459.133-.153.177-.265.265-.441.087-.176.044-.331-.022-.463s-.591-1.424-.81-1.954c-.213-.517-.43-.447-.591-.455-.152-.008-.327-.009-.501-.009s-.459.066-.697.327c-.237.261-.904.883-.904 2.152s.924 2.496 1.053 2.67c.129.174 1.819 2.778 4.406 3.896.615.266 1.096.425 1.47.545.617.198 1.18.17 1.623.104.494-.074 1.564-.639 1.784-1.257s.22-.119.155-.228c-.066-.113-.241-.183-.506-.316z"/></svg>
                             </div>
                             <div>
                                 <div class="text-xs uppercase tracking-widest text-darkText/40">WhatsApp</div>
-                                <div class="text-lg font-bold text-primary italic">{{ $settings['contact_whatsapp'] ?? '+880 1625 412437' }}</div>
+                                <div class="text-lg font-bold text-primary italic">{{ $settings['contact_whatsapp'] ?? '+880 1352 221279' }}</div>
                             </div>
                         </a>
-                        <div class="flex items-center p-4 border border-light">
+                        <a href="mailto:{{ $settings['contact_email'] ?? 'support@thpconstructions.com' }}" class="flex items-center group p-4 border border-light hover:border-accent transition-colors">
                             <div class="w-12 h-12 bg-accent/10 text-accent flex items-center justify-center rounded-full mr-4">
                                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                             </div>
                             <div>
                                 <div class="text-xs uppercase tracking-widest text-darkText/40">Email Us</div>
-                                <div class="text-lg font-bold text-primary italic">{{ $settings['contact_email'] ?? 'haqtasnim21@gmail.com' }}</div>
+                                <div class="text-lg font-bold text-primary italic break-all group-hover:text-accent transition-colors">{{ $settings['contact_email'] ?? 'support@thpconstructions.com' }}</div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -49,9 +49,15 @@
                     <p class="text-white/60 mb-8 leading-relaxed">
                         {!! nl2br(e($settings['contact_address'] ?? "48/1 Satirpara, Narsingdi Sadar, \nDhaka, Bangladesh.")) !!}
                     </p>
-                    <div class="aspect-w-1 aspect-h-1 grayscale brightness-150">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116666.07590881144!2d90.627768!3d23.940523!2m3!1f0!2f3!1m3!1d3651.902422204561!2d90.71650837604675!3d23.92849508235223!2m3!1f0!2f3!1m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x3754326588a44b41%3A0xe530f2f53434685!2sNarsingdi!5e0!3m2!1sen!2sbd!4v1713597000000!5m2!1sen!2sbd" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
+                    <a href="https://maps.app.goo.gl/H61qVNNCVn9M7gsP7" target="_blank" class="text-xs font-bold uppercase tracking-widest text-accent hover:text-white transition-colors flex items-center">
+                        <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        Get Directions
+                    </a>
+                </div>
+                
+                <!-- Map -->
+                <div class="lux-shadow overflow-hidden h-[300px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.102545909268!2d90.7100609!3d23.9214226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3754311e84dd1645%3A0x5fd2e39df464d626!2sTHP%20Construction!5e0!3m2!1sen!2sbd!4v1777821238580!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 

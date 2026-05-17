@@ -28,10 +28,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="relative">
+                <div class="relative flex justify-center items-center">
                     <div class="absolute -inset-4 bg-accent/20 blur-3xl rounded-full"></div>
                     <img src="{{ $settings['about_image_1'] ? asset('storage/' . $settings['about_image_1']) : 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2070&auto=format&fit=crop' }}"
-                        class="relative z-10 w-full h-[600px] object-cover lux-shadow" alt="Construction Excellence">
+                        class="relative z-10 h-[400px] lg:h-[450px] w-auto max-w-full object-contain lux-shadow" alt="Construction Excellence">
                 </div>
             </div>
         </div>

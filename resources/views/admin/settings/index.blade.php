@@ -29,6 +29,11 @@
                             <input type="text" name="{{ $setting->key }}" value="{{ $setting->value }}" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
                         @elseif($setting->type === 'textarea')
                             <textarea name="{{ $setting->key }}" rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">{{ $setting->value }}</textarea>
+                        @elseif($setting->type === 'select')
+                            <select name="{{ $setting->key }}" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
+                                <option value="1" {{ $setting->value == '1' ? 'selected' : '' }}>Enabled</option>
+                                <option value="0" {{ $setting->value == '0' ? 'selected' : '' }}>Disabled</option>
+                            </select>
                         @elseif($setting->type === 'image')
                             <div class="flex items-center space-x-4">
                                 @if($setting->value)

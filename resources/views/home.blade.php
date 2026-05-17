@@ -246,7 +246,7 @@
             {{ $settings['cta_description'] ?? 'Join 250+ homeowners who trusted THP for structural integrity and modern architectural beauty.' }}
         </p>
         <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <a href="https://wa.me/8801625412437" class="px-10 py-5 bg-primary text-white font-bold tracking-widest uppercase text-sm hover:bg-white hover:text-primary transition-all duration-300">
+            <a href="https://wa.me/8801352221279" class="px-10 py-5 bg-primary text-white font-bold tracking-widest uppercase text-sm hover:bg-white hover:text-primary transition-all duration-300">
                 Book a Consultation
             </a>
             <a href="{{ route('contact.index') }}" class="px-10 py-5 border-2 border-primary text-primary font-bold tracking-widest uppercase text-sm hover:bg-primary hover:text-white transition-all duration-300">

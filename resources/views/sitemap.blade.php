@@ -1,6 +1,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>{{ url('/') }}</loc>
+        <lastmod>{{ now()->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -25,9 +26,10 @@
         <priority>0.8</priority>
     </url>
     
-    @foreach(\App\Models\Project::all() as $project)
+    @foreach($projects as $project)
     <url>
         <loc>{{ route('projects.show', $project) }}</loc>
+        <lastmod>{{ $project->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -39,9 +41,10 @@
         <priority>0.7</priority>
     </url>
 
-    @foreach(\App\Models\Blog::all() as $blog)
+    @foreach($blogs as $blog)
     <url>
         <loc>{{ route('blog.show', $blog->slug) }}</loc>
+        <lastmod>{{ $blog->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -53,9 +56,10 @@
         <priority>0.7</priority>
     </url>
 
-    @foreach(\App\Models\Product::where('active', true)->get() as $product)
+    @foreach($products as $product)
     <url>
         <loc>{{ route('products.show', $product->slug) }}</loc>
+        <lastmod>{{ $product->updated_at->tz('UTC')->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -65,5 +69,17 @@
         <loc>{{ url('/contact') }}</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>{{ route('privacy') }}</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>{{ route('terms') }}</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
 </urlset>

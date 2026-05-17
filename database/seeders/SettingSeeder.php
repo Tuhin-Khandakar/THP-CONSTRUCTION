@@ -406,6 +406,29 @@ class SettingSeeder extends Seeder
                 'label' => 'Packages Section Description',
                 'group' => 'services',
             ],
+
+            // Popup Banner
+            [
+                'key' => 'popup_enabled',
+                'value' => '0',
+                'type' => 'select',
+                'label' => 'Enable Popup Banner',
+                'group' => 'popup',
+            ],
+            [
+                'key' => 'popup_image',
+                'value' => null,
+                'type' => 'image',
+                'label' => 'Popup Image',
+                'group' => 'popup',
+            ],
+            [
+                'key' => 'popup_link',
+                'value' => '#',
+                'type' => 'text',
+                'label' => 'Popup Link',
+                'group' => 'popup',
+            ],
         ];
 
         foreach ($settings as $setting) {
